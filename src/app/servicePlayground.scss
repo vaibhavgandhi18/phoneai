@@ -1,10 +1,41 @@
 .circle-bg {
-    stroke: #e5e7eb; /* Light gray for the background circle */
+  stroke: #e5e7eb; /* Light gray for the background circle */
 }
 
 .circle-static {
-    /* Blue color for the progress circle */
-    transform: rotate(-90deg); /* Start from the top */
-    transform-origin: center;
-    transition: stroke-dashoffset 0.35s;
+  /* Blue color for the progress circle */
+  transform: rotate(-90deg); /* Start from the top */
+  transform-origin: center;
+  transition: stroke-dashoffset 0.35s;
+}
+.phone-icon {
+  animation: shake 0.5s infinite;
+  transform-origin: center;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.showTimer {
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+}
+.timer {
+  transform: translateY(-10px);
+  transition: opacity 1s ease, transform 1s ease;
+  opacity: 0;
 }
