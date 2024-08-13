@@ -47,78 +47,91 @@ export class PlaygroundComponent implements OnInit, OnDestroy {
         "Hello. Thank you for answering. My name is Alex.Calling about an issue with my current month's mobile bill.I noticed an additional charge of $100 for international roaming and I'd like to dispute it.Could you please help me with that?",
       interval: 500,
     },
-
-    { sender: "Ask Eva", message: "I apologies-", interval: 1500 },
     {
       sender: "Ask Eva",
       message:
         "Yes, of course, Alex. Your account number can be found at the top right corner of your bill, and your PIN is the four-digit code you created when you set up your account. Can you please locate those for me?",
-      interval: 2500,
+      interval: 1000,
     },
     {
       sender: "Breezy",
-      message: "Wait",
-      interval: 2500,
+      message: "Okay. Let me just grab my bill real quick.Can you please hold on for just a second?",
+      interval: 8000,
     },
     {
       sender: "Breezy",
       message: "Hello? Are you still there? ",
-      interval: 2500,
+      interval: 1000,
     },
     {
       sender: "Ask Eva",
       message:
         "Yes, I'm still here, Alex. Please go ahead and share your account number and PIN with me.",
-      interval: 2500,
+      interval: 1000,
     },
     {
       sender: "Breezy",
       message: "Already did.",
-      interval: 2500,
+      interval: 1000,
     },
     {
-      sender: "Ask Eva",
+      sender: "Breezy",
       message: "My account number is 85213456789.And my PIN is 1234.",
-      interval: 2500,
+      interval: 1000,
     },
     {
       sender: "Ask Eva",
       message:
         "Thank you. Alright, Alex, I've got that. Let me just check on the status of your account. Can you tell me, where did you travel to that incurred the international roaming charge?",
-      interval: 2500,
+      interval: 1000,
     },
     {
       sender: "Breezy",
       message:
         "I actually didn't travel anywhere. That's why I'm disputing the charge.",
-      interval: 1500,
+      interval: 1000,
+    },
+    {
+      sender: "Breezy",
+      message: "I didn't use any international roaming services, so I'm not sure why I was charged $100.",
+      interval: 1000,
+    },
+    {
+      sender: "Ask Eva",
+      message:"I understand your concern, Alex. I'm going to go ahead and process a dispute for this charge. I'll also check to see if there were any errors on our end that may have caused this charge to appear on your bill.",
+      interval: 1000,
+    },
+    {
+      sender: "Breezy",
+      message: "Okay. That's great. I appreciate your help with it. Can you please let me know what the outcome is and when I can expect the correction to be made?",
+      interval: 1000,
+    },
+    {
+      sender: "Ask Eva",
+      message: "Yes, Alex, I've submitted the dispute and our team will review it within the next three to five business days. You should receive an update via email or a phone call from our team once the dispute is resolved. Is there a preferred method of contact you'd like us to use to reach out to you?",
+      interval: 1000,
+    },
+    {
+      sender: "Breezy",
+      message: "Either way is fine. Thank you. Can just email me. That's the easiest.",
+      interval: 1000,
     },
     {
       sender: "Ask Eva",
       message:
         "Okay, Alex, it was my pleasure to assist you with your billing issue. If you have any other questions or concerns in the future, don't hesitate to reach out to us. Have a great day.",
-      interval: 2500,
+      interval: 1000,
     },
     {
       sender: "Breezy",
       message:
-        "Either way is fine. Thank you. Can just email me. That's the easiest.",
-      interval: 1500,
-    },
-    {
-      sender: "Ask Eva",
-      message: "You're welcome",
-      interval: 2500,
-    },
-    {
-      sender: "Breezy",
-      message: "Thank you again. Goodbye.",
-      interval: 150,
+        "Thank you again. Goodbye.",
+      interval: 1000,
     },
     {
       sender: "Ask Eva",
       message: "You're welcome, Alex. Goodbye.",
-      interval: 250,
+      interval: 1000,
     },
     {
       sender: "Breezy",
@@ -176,7 +189,7 @@ export class PlaygroundComponent implements OnInit, OnDestroy {
   typeMessage(message: Message): void {
     let currentIndex = 0;
     let displayedText = "";
-    const typingSpeed = 90; // Adjust typing speed as needed
+    const typingSpeed = 75; // Adjust typing speed as needed
 
     const typeInterval = setInterval(() => {
       displayedText += message.message.charAt(currentIndex);
