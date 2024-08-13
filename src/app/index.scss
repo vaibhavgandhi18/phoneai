@@ -1,0 +1,10 @@
+.circle-bg {
+  stroke: #e5e7eb; /* Light gray for the background circle */
+}
+
+.circle-static {
+  /* Blue color for the progress circle */
+  transform: rotate(-90deg); /* Start from the top */
+  transform-origin: center;
+  transition: stroke-dashoffset 0.35s;
+}
