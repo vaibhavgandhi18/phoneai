@@ -1,0 +1,20 @@
+<!-- <div class="row">
+    <button
+        class="btn btn-info"
+        style="width: 150px; height: 24px; margin: 5px; font-size: small"
+        *ngFor="let item of uniqueSentiments"
+        (click)="dofilter(item)"
+    >
+        {{ item.sentiment.trim() }}
+        <span class="badge" style="right: -10px; position: relative">(&nbsp;{{ item.count }}&nbsp;)</span>
+    </button> -->
+<!-- <button class="btn btn-secondary" style="width: 100px; height: 24px; margin: 5px; font-size: small;" >Button <span class="badge" style="right: -10px; position: relative; color: black;">(&nbsp;1&nbsp;)</span></button>
+    <button class="btn btn-secondary" style="width: 100px; height: 24px; margin: 5px; font-size: small;" >Button <span class="badge" style="right: -10px; position: relative; color: black;">(&nbsp;1&nbsp;)</span></button>
+    <button class="btn btn-secondary" style="width: 100px; height: 24px; margin: 5px; font-size: small;" >Button <span class="badge" style="right: -10px; position: relative; color: black;">(&nbsp;1&nbsp;)</span></button> -->
+<!-- </div> -->
+
+<div class="flex gap-2">
+    <button type="button" class="btn btn-outline-info" *ngFor="let item of uniqueSentiments" (click)="dofilter(item)">
+        <span>{{ item.sentiment.trim() }}</span> <span>({{ item.count }})</span>
+    </button>
+</div>

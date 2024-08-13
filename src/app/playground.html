@@ -1,0 +1,36 @@
+<div>
+    <div class="prose dark:text-white-light">
+        <h3 class="m-0 font-bold dark:text-white-light">User Bot Playground</h3>
+    </div>
+    <ul class="flex space-x-2 rtl:space-x-reverse">
+        <li>
+            <a href="javascript:;" routerLink="/" class="text-primary hover:underline">Dashboard</a>
+        </li>
+        <li class="before:content-['/'] ltr:before:mr-2 rtl:before:ml-2">
+            <span>User Bot Playground</span>
+        </li>
+    </ul>
+    <div class="flex justify-between gap-3 pt-5">
+        <div class="panel flex basis-1/2 flex-col p-0">
+            <div class="border-b p-3 text-center text-lg font-semibold">User Bot Agent</div>
+            <div class="p-3">
+                <label>User Agent AI prompt: </label>
+                <textarea
+                    id="ctnTextarea"
+                    [(ngModel)]="userPrompt"
+                    rows="5"
+                    class="form-textarea"
+                    placeholder="Enter prompt for User Agent"
+                    required
+                ></textarea>
+                <button type="submit" class="btn btn-primary !mt-6" (click)="userAgentPost()">Submit</button>
+            </div>
+        </div>
+    </div>
+    <div class="flex justify-between gap-3 pt-5">
+        <div class="panel flex flex-1 flex-col p-0">
+            <div class="border-b p-3 text-center text-lg font-semibold">Call Transcript</div>
+            <div class="p-3">For loop for call transcript</div>
+        </div>
+    </div>
+</div>

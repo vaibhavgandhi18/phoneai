@@ -1,0 +1,236 @@
+[
+  {
+    "date": "2022-01-01",
+    "pageName": "Device List",
+    "flow": "BYOD",
+    "session": {
+      "sessionId": "string",
+      "videoLink": "string"
+    },
+    "eddies": {
+      "eddieId": "string",
+      "eddieType": "disabledClick"
+    }
+  },
+  {
+    "date": "2022-01-01",
+    "pageName": "Device Details",
+    "flow": "NEW",
+    "session": {
+      "sessionId": "string",
+      "videoLink": "string"
+    },
+    "eddies": {
+      "eddieId": "string",
+      "eddieType": "API error"
+    }
+  },
+  {
+    "date": "2022-01-02",
+    "pageName": "Device List",
+    "flow": "BYOD",
+    "session": {
+      "sessionId": "string",
+      "videoLink": "string"
+    },
+    "eddies": {
+      "eddieId": "string",
+      "eddieType": "disabledClick"
+    }
+  },
+  {
+    "date": "2022-01-02",
+    "pageName": "Device Details",
+    "flow": "NEW",
+    "session": {
+      "sessionId": "string",
+      "videoLink": "string"
+    },
+    "eddies": {
+      "eddieId": "string",
+      "eddieType": "API error"
+    }
+  },
+  {
+    "date": "2022-01-03",
+    "pageName": "Device List",
+    "flow": "BYOD",
+    "session": {
+      "sessionId": "string",
+      "videoLink": "string"
+    },
+    "eddies": {
+      "eddieId": "string",
+      "eddieType": "disabledClick"
+    }
+  },
+  {
+    "date": "2022-01-03",
+    "pageName": "Device Details",
+    "flow": "NEW",
+    "session": {
+      "sessionId": "string",
+      "videoLink": "string"
+    },
+    "eddies": {
+      "eddieId": "string",
+      "eddieType": "API error"
+    }
+  },
+  {
+    "date": "2022-01-04",
+    "pageName": "Device List",
+    "flow": "BYOD",
+    "session": {
+      "sessionId": "string",
+      "videoLink": "string"
+    },
+    "eddies": {
+      "eddieId": "string",
+      "eddieType": "disabledClick"
+    }
+  },
+  {
+    "date": "2022-01-04",
+    "pageName": "Device Details",
+    "flow": "NEW",
+    "session": {
+      "sessionId": "string",
+      "videoLink": "string"
+    },
+    "eddies": {
+      "eddieId": "string",
+      "eddieType": "API error"
+    }
+  },
+  {
+    "date": "2022-01-05",
+    "pageName": "Device List",
+    "flow": "BYOD",
+    "session": {
+      "sessionId": "string",
+      "videoLink": "string"
+    },
+    "eddies": {
+      "eddieId": "string",
+      "eddieType": "disabledClick"
+    }
+  },
+  {
+    "date": "2022-01-05",
+    "pageName": "Device Details",
+    "flow": "NEW",
+    "session": {
+      "sessionId": "string",
+      "videoLink": "string"
+    },
+    "eddies": {
+      "eddieId": "string",
+      "eddieType": "API error"
+    }
+  },
+  {
+    "date": "2022-01-06",
+    "pageName": "Device List",
+    "flow": "BYOD",
+    "session": {
+      "sessionId": "string",
+      "videoLink": "string"
+    },
+    "eddies": {
+      "eddieId": "string",
+      "eddieType": "disabledClick"
+    }
+  },
+  {
+    "date": "2022-01-06",
+    "pageName": "Device Details",
+    "flow": "NEW",
+    "session": {
+      "sessionId": "string",
+      "videoLink": "string"
+    },
+    "eddies": {
+      "eddieId": "string",
+      "eddieType": "API error"
+    }
+  },
+  {
+    "date": "2022-01-07",
+    "pageName": "Device List",
+    "flow": "BYOD",
+    "session": {
+      "sessionId": "string",
+      "videoLink": "string"
+    },
+    "eddies": {
+      "eddieId": "string",
+      "eddieType": "disabledClick"
+    }
+  },
+  {
+    "date": "2022-01-07",
+    "pageName": "Device Details",
+    "flow": "NEW",
+    "session": {
+      "sessionId": "string",
+      "videoLink": "string"
+    },
+    "eddies": {
+      "eddieId": "string",
+      "eddieType": "API error"
+    }
+  },
+  {
+    "date": "2022-01-08",
+    "pageName": "Device List",
+    "flow": "BYOD",
+    "session": {
+      "sessionId": "string",
+      "videoLink": "string"
+    },
+    "eddies": {
+      "eddieId": "string",
+      "eddieType": "disabledClick"
+    }
+  },
+  {
+    "date": "2022-01-08",
+    "pageName": "Device Details",
+    "flow": "NEW",
+    "session": {
+      "sessionId": "string",
+      "videoLink": "string"
+    },
+    "eddies": {
+      "eddieId": "string",
+      "eddieType": "API error"
+    }
+  },
+  {
+    "date": "2022-01-09",
+    "pageName": "Device List",
+    "flow": "BYOD",
+    "session": {
+      "sessionId": "string",
+      "videoLink": "string"
+    },
+    "eddies": {
+      "eddieId": "string",
+      "eddieType": "disabledClick"
+    }
+  },
+  {
+    "date": "2022-01-09",
+    "pageName": "Device Details",
+    "flow": "NEW",
+    "session": {
+      "sessionId": "string",
+      "videoLink": "string"
+    },
+    "eddies": {
+      "eddieId": "string",
+      "eddieType": "API error"
+    }
+  }
+]

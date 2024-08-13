@@ -1,0 +1,124 @@
+<div class="p-2">
+    <!-- <video #videoContainer controls class="contentwidth">
+        <source [src]="videoSource" type="video/webm" />
+    </video> -->
+</div>
+<div class="mt-7 flex items-start gap-3 p-2" *ngIf="this.currentItem">
+    <div class="prose"><h4 class="self-start font-bold dark:text-white-light">Summary:</h4></div>
+    <div class="">
+        {{ this.currentItem['Summary'] }}
+    </div>
+</div>
+<div class="mt-7 p-2" *ngIf="this.currentItem">
+    <div class="text-lg">API Request and Response Data:</div>
+    <table class="table" style="background: none" *ngIf="this.currentItem && this.currentItem.Api">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">API Name</th>
+                <th scope="col">Success Rate</th>
+                <th scope="col">Response Time</th>
+                <th scope="col">Request</th>
+                <th scope="col">Response</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of this.currentItem.Api; let i = index">
+                <th scope="row">{{ i + 1 }}</th>
+                <td>{{ item.name }}</td>
+                <td>95%</td>
+                <td>250ms</td>
+                <td><a class="cursor-pointer text-info" (click)="requestModal.open()">Request</a></td>
+                <td><a class="cursor-pointer text-info" (click)="responseModal.open()">Response</a></td>
+                <modal #requestModal>
+                    <ng-template #modalHeader> <div>Request</div> </ng-template>
+                    <ng-template #modalBody>
+                        {{ item.request | json }}
+                    </ng-template>
+                    <ng-template #modalFooter>
+                        <button type="button" (click)="requestModal.close()" class="btn btn-outline-primary">Close</button>
+                    </ng-template>
+                </modal>
+                <modal #responseModal>
+                    <ng-template #modalHeader> <div>Response</div> </ng-template>
+                    <ng-template #modalBody>
+                        {{ item.response | json }}
+                    </ng-template>
+                    <ng-template #modalFooter>
+                        <button type="button" (click)="responseModal.close()" class="btn btn-outline-primary">Close</button>
+                    </ng-template>
+                </modal>
+            </tr>
+        </tbody>
+    </table>
+    <div class="mt-7 flex flex-col gap-2" *ngIf="this.currentItem">
+        <div class="text-lg">Voice of Customer:</div>
+        <p class="">{{ this.currentItem['Improvement OE'] }}</p>
+    </div>
+    <div class="mt-4">
+        <div class="text-lg">Suggested Actions:</div>
+        <div *ngIf="this.currentItem && this.currentItem['Suggested Actions'] != 'JIRA'" [innerHTML]="this.currentItem['Suggested Actions']"></div>
+        <div *ngIf="this.currentItem && this.currentItem['Suggested Actions'] == 'JIRA'">
+            <div class="" *ngIf="ticketsubmited == false">
+                <button type="button" class="btn btn-primary" (click)="modal2.open()">Create a Jira Ticket</button>
+            </div>
+            <div *ngIf="ticketsubmited == true">
+                Jira Ticket created: <a class="btn-primary" href="https://jira.cingular.net/jira/browse/AKA-2908" target="_blank"> AKA-2908</a>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <modal #modal2>
+            <ng-template #modalHeader> <div>Bug: Issues affecting International Day Pass Purchase</div> </ng-template>
+            <ng-template #modalBody>
+                <p>
+                    Description: "User reported issues with purchasing international day passes. Video evidence available. API timeouts and lack of pricing
+                    explanations were observed, impacting the user experience."
+                </p>
+                <div class="d-flex align-items-center" *ngIf="processing == true">
+                    <strong class="text-primary">Submitting...</strong>
+                    <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+                </div>
+            </ng-template>
+            <ng-template #modalFooter>
+                <button type="button" (click)="modal2.close()" class="btn btn-outline-danger">Cancel</button>
+                <button type="button" (click)="closedialog('Submit', modal2)" class="btn btn-primary ltr:ml-4 rtl:mr-4">Submit</button>
+            </ng-template>
+        </modal>
+
+        <!-- Button trigger modal --
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+        Create a Jira Ticket
+      </button>
+  
+      <-- Modal --
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>-->
+    </div>
+    <div class="mt-4">
+        <div class="text-lg">Recommended follow up:</div>
+        <p>
+            1. Investigate and resolve the API timeouts promptly to improve user experience.<br />
+            2. Enhance the clarity and ease of the international day pass purchase process on the website, ensuring explanations for pricing options are
+            provided.
+        </p>
+    </div>
+</div>

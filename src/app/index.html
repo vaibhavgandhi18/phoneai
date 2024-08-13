@@ -1,0 +1,89 @@
+<div>
+    <!-- <ul class="flex space-x-2 rtl:space-x-reverse">
+        <li>
+            <a href="javascript:;" class="text-primary hover:underline">Dashboard</a>
+        </li>
+        <li class="before:content-['/'] ltr:before:mr-2 rtl:before:ml-2">
+            <span>Sales</span>
+        </li>
+    </ul> -->
+    <div class="prose dark:text-white-light">
+        <h3 class="m-0 font-bold dark:text-white-light">Phone BOT Calls</h3>
+        <div>July 19 - July 31, 2024</div>
+    </div>
+    <div class="pt-5">
+        <div class="my-4 grid grid-cols-3 gap-3">
+            <div class="panel col-span-2 p-0">
+                <div class="" *ngIf="aiCallsData && aiCallsData.length > 0">
+                    <div class="flex justify-between border-b border-gray-400 p-3">
+                        <div class="text-lg font-bold">Bot : {{aiCallsData[activeCallDataIndex].botId}}</div>
+                    </div>
+                    <div class="p-3">
+                        <div class="flex justify-between rounded-lg border p-2">
+                            <div class="flex flex-col">
+                                <div class="text-lg">{{aiCallsData[activeCallDataIndex].title}}</div>
+                                <div>{{aiCallsData[activeCallDataIndex].callTime }}</div>
+                            </div>
+
+                            <div class="relative h-24 w-24">
+                                <svg class="absolute inset-0 h-full w-full" viewBox="0 0 100 100">
+                                    <circle class="circle-bg" cx="50" cy="50" r="35" stroke-width="7" fill="none" />
+                                    <circle
+                                        class="circle-static"
+                                        cx="50"
+                                        cy="50"
+                                        r="35"
+                                        stroke-width="7"
+                                        fill="none"
+                                        [ngStyle]="{'stroke':getTypeColor(aiCallsData[activeCallDataIndex].type)}"
+                                        [style.strokeDasharray]="circumference"
+                                        [style.strokeDashoffset]="getOffset(aiCallsData[activeCallDataIndex].score)"
+                                    />
+                                </svg>
+                                <div class="absolute inset-0 flex items-center justify-center text-lg">{{ aiCallsData[activeCallDataIndex].score }}%</div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 mt-5 text-lg">Transcript</div>
+                        <div class="flex flex-col gap-2">
+                            <div *ngFor="let transcript of aiCallsData[activeCallDataIndex].transcript; let transcriptIndex= index">{{transcript}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel col-span-1 p-2">
+                <ol class="list-group comment-group">
+                    <li
+                        (click)="setCallItem(i)"
+                        class="list-group-item d-flex justify-content-between align-items-start"
+                        [class.active]="activeCallDataIndex === i"
+                        *ngFor="let item of aiCallsData; let i = index"
+                    >
+                        <div class="m-1 grid cursor-pointer grid-cols-3 gap-2 rounded-sm border p-1" [class]="activeCallDataIndex == i ? 'bg-gray-300' : ''">
+                            <div class="col-span-1"><img [src]="item.imgURL" class="img-thumbnail" alt="..." /></div>
+                            <div class="col-span-2 flex flex-col gap-1">
+                                <button *ngIf="item['type'].trim().includes('Satisfied')" type="button" class="btn btn-primary btn-sm self-start text-xs">
+                                    {{ item['type'] }}
+                                </button>
+                                <button *ngIf="item['type'].trim().includes('Happy')" type="button" class="btn btn-success btn-sm self-start text-xs">
+                                    {{ item['type'] }}
+                                </button>
+                                <button *ngIf="item['type'].trim().includes('Angry')" type="button" class="btn btn-danger btn-sm self-start text-xs">
+                                    {{ item['type'] }}
+                                </button>
+                                <button *ngIf="item['type'].trim().includes('Frustrated')" type="button" class="btn btn-warning btn-sm self-start text-xs">
+                                    {{ item['type'] }}
+                                </button>
+                                <button *ngIf="item['type'].trim().includes('Unsure')" type="button" class="btn btn-secondary cover btn-sm self-start text-xs">
+                                    {{ item['type'] }}
+                                </button>
+                                <div class="text-base">{{item.title}}</div>
+                                <div class="self-end text-xs">{{ item.callTime }}</div>
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>

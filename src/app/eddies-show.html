@@ -1,0 +1,466 @@
+<div>
+    <div class="prose dark:text-white-light">
+        <h3 class="m-0 font-bold dark:text-white-light">Eddies Show</h3>
+    </div>
+    <ul class="flex space-x-2 rtl:space-x-reverse">
+        <li>
+            <a href="javascript:;" routerLink="/" class="text-primary hover:underline">Dashboard</a>
+        </li>
+        <li class="before:content-['/'] ltr:before:mr-2 rtl:before:ml-2">
+            <span>Eddies Show</span>
+        </li>
+    </ul>
+    <div *ngIf="!showChart">
+        <div class="mt-5 flex gap-3">
+            <div class="panel flex basis-1/2 cursor-pointer flex-col gap-2 p-2" (click)="displayChart(1)">
+                <img class="h-80 object-cover" src="assets/images/Bar-Race-Tile_1.png" alt="Card image cap" />
+                <div class="text-lg">Bar Chart Race</div>
+                <div>Watch the dynamic bar chart race visualizing the monthly number of eddies for various application pages</div>
+            </div>
+            <div class="panel flex basis-1/2 cursor-pointer flex-col gap-2 p-2" (click)="displayChart(2)">
+                <img class="h-80 object-cover" src="assets/images/usBubble.png" alt="Card image cap" />
+                <div class="text-lg">U.S Bubble Map - Session vs Eddies</div>
+                <div>Explore the daily variations in sessions and eddies across each day of the month for given duration</div>
+            </div>
+        </div>
+        <div class="mt-3 flex gap-3">
+            <div class="panel flex basis-1/2 cursor-pointer flex-col gap-2 p-2" (click)="displayChart(3)">
+                <img class="h-80 object-cover" src="assets/images/separate_chart.png" alt="Card image cap" />
+                <div class="text-lg">Separated Bar Chart - Eddies Per Day</div>
+                <div>Watch the animated view of eddies across the different context of the application in a tree map</div>
+            </div>
+            <div class="panel flex basis-1/2 cursor-pointer flex-col gap-2 p-2" (click)="displayChart(4)">
+                <img class="h-80 object-cover" src="assets/images/perform_chart.png" alt="Card image cap" />
+                <div class="text-lg">Performance chart - Sessions vs Eddies</div>
+                <div>Explore the daily variations in sessions and eddies across each day of the month for given duration in a stacked area chartNum</div>
+            </div>
+        </div>
+    </div>
+    <div class="panel mt-5 p-2" *ngIf="showChart">
+        <div *ngIf="chartNum == 1">
+            <div class="flex justify-between p-2">
+                <div class="prose">
+                    <h4 class="">Bar Chart Race</h4>
+                </div>
+                <div class="flex items-center justify-center gap-5">
+                    <div>
+                        <ng-select
+                            [items]="barChartDuration"
+                            [(ngModel)]="barChartDurationSelected"
+                            [placeholder]="selectedPage"
+                            [searchable]="false"
+                            [clearable]="false"
+                            class="custom-multiselect flex-grow self-stretch"
+                        >
+                        </ng-select>
+                    </div>
+                    <div (click)="hideChart()" class="cursor-pointer">
+                        <icon-x class="h-6 w-6" />
+                    </div>
+                </div>
+            </div>
+            <iframe
+                width="100%"
+                height="394"
+                frameborder="0"
+                src="
+          https://observablehq.com/embed/b102cc05e9f94234@3139?cells=chart&api_key=92b4f99e0de55e420cdc60ec39a2fb5281023afa"
+            ></iframe>
+        </div>
+        <div *ngIf="chartNum == 2">
+            <div class="flex justify-between p-2">
+                <div class="prose">
+                    <h4 class="">U.S Bubble Map - Session Vs Eddies</h4>
+                </div>
+                <div class="flex items-center justify-center gap-5">
+                    <div>
+                        <ng-select
+                            [items]="pagesOptions"
+                            [(ngModel)]="sesssionEddiesSelected"
+                            [placeholder]="selectedPage"
+                            [searchable]="false"
+                            [clearable]="false"
+                            class="custom-multiselect w-96 flex-grow self-stretch"
+                        >
+                        </ng-select>
+                    </div>
+                    <div (click)="hideChart()" class="cursor-pointer">
+                        <icon-x class="h-6 w-6" />
+                    </div>
+                </div>
+            </div>
+            <iframe
+                width="100%"
+                height="694"
+                frameborder="0"
+                src="https://observablehq.com/embed/5ef8be2b723a885d@247?cells=chart&api_key=72f0fd98b12ab749a2dd26f665b502cd19062e6d"
+            ></iframe>
+        </div>
+        <div *ngIf="chartNum == 3">
+            <div class="flex justify-between p-2">
+                <div class="prose">
+                    <h4 class="">Separated Bar Chart - Eddies Per Day</h4>
+                </div>
+                <div class="flex items-center justify-center gap-5">
+                    <div (click)="hideChart()" class="cursor-pointer">
+                        <icon-x class="h-6 w-6" />
+                    </div>
+                </div>
+            </div>
+            <iframe
+                width="100%"
+                height="584"
+                frameborder="0"
+                src="
+https://observablehq.com/embed/dfe341728bcc6598@720?cells=chart&api_key=50d48cbe404e8d0c5d16a74b199f459cb126a494"
+            ></iframe>
+        </div>
+        <div *ngIf="chartNum == 4">
+            <div class="flex justify-between p-2">
+                <div class="prose">
+                    <h4 class="">Performance chart - Sessions vs Eddies</h4>
+                </div>
+                <div class="flex items-center justify-center gap-5">
+                    <ng-select
+                        [items]="pagesOptions"
+                        [(ngModel)]="sesssionEddiesPCSelected"
+                        [placeholder]="selectedPage"
+                        [searchable]="false"
+                        [clearable]="false"
+                        class="custom-multiselect w-96 flex-grow self-stretch"
+                    >
+                    </ng-select>
+                    <div (click)="hideChart()" class="cursor-pointer">
+                        <icon-x class="h-6 w-6" />
+                    </div>
+                </div>
+            </div>
+            <iframe
+                width="100%"
+                height="584"
+                frameborder="0"
+                src="https://observablehq.com/embed/fe584603498c21e7@686?cells=chart&api_key=9f4b1a15f234c5bcebe5f1dd5a46d2e22c6150e9"
+            ></iframe>
+        </div>
+    </div>
+    <!-- 
+    <div class="eddContainer" *ngIf="!showChart">
+        <div class="row">
+            <div class="col-lg-3 col-md-6" style="width: 500px; height: 300px; margin-left: 40px">
+                <div
+                    class="card"
+                    style="width: 500px; height: 300px; border: 0px solid; box-shadow: 10px 20px 25px gray; cursor: pointer"
+                    (click)="displayChart(1)"
+                >
+                    <img class="card-img-top img-responsive" src="assets/images/Bar-Race-Tile_1.png" alt="Card image cap" height="200px" />
+                    <div class="card-body">
+                        <h4 class="card-title">Bar Chart Race</h4>
+                        <p class="card-text">Watch the dynamic bar chart race visualizing the monthly number of eddies for various application pages</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6" style="height: 300px; width: 500px; margin-left: 60px">
+                <div
+                    class="card"
+                    style="width: 500px; height: 300px; border: 0px solid; box-shadow: 10px 20px 25px gray; cursor: pointer"
+                    (click)="displayChart(2)"
+                >
+                    <img class="card-img-top img-responsive" src="assets/images/usBubble.png" alt="Card image cap" height="180px" />
+                    <div class="card-body">
+                        <h4 class="card-title">U.S Bubble Map - Session vs Eddies</h4>
+                        <p class="card-text">Explore the daily variations in sessions and eddies across each day of the month for given duration</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 40px">
+            <div class="col-lg-3 col-md-6" style="width: 500px; height: 300px; margin-left: 40px">
+                <div
+                    class="card"
+                    style="width: 500px; height: 300px; border: 0px solid; box-shadow: 10px 20px 25px gray; cursor: pointer"
+                    (click)="displayChart(3)"
+                >
+                    <img class="card-img-top img-responsive" src="assets/images/separate_chart.png" alt="Card image cap" height="180px" />
+                    <div class="card-body">
+                        <h4 class="card-title">Separated Bar Chart - Eddies Per Day</h4>
+                        <p class="card-text">Watch the animated view of eddies across the different context of the application in a tree map</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6" style="height: 300px; width: 500px; margin-left: 60px">
+                <div
+                    class="card"
+                    style="width: 500px; height: 300px; border: 0px solid; box-shadow: 10px 20px 25px gray; cursor: pointer"
+                    (click)="displayChart(4)"
+                >
+                    <img class="card-img-top img-responsive" src="assets/images/perform_chart.png" alt="Card image cap" height="180px" />
+                    <div class="card-body">
+                        <h4 class="card-title">Performance chart - Sessions vs Eddies</h4>
+                        <p class="card-text">
+                            Explore the daily variations in sessions and eddies across each day of the month for given duration in a stacked area chartNum
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="showChart && chartNum == 1">
+        <div style="display: flex">
+            <div>
+                <h3 class="mb-3 font-medium" style="font-size: 24px">Bar Chart Race</h3>
+            </div>
+            <div>
+                <div class="d-inline-block" ngbDropdown>
+                    <button
+                        class="btn btn-primary d-flex align-items-center"
+                        style="height: 30px; background: #90acc7; width: 160px"
+                        id="dropdown1"
+                        ngbDropdownToggle
+                    >
+                        3 Months&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </button>
+                    <div ngbDropdownMenu aria-labelledby="dropdown1">
+                        <button class="dropdown-item">1 Month</button>
+                        <button class="dropdown-item">2 Months</button>
+                        <button class="dropdown-item">3 Months</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: right" (click)="hideChart()">
+            <button type="button" class="btn-close" aria-label="Close"></button>
+        </div>
+        <iframe
+            width="100%"
+            height="394"
+            frameborder="0"
+            src="
+      https://observablehq.com/embed/b102cc05e9f94234@3139?cells=chart&api_key=92b4f99e0de55e420cdc60ec39a2fb5281023afa"
+        ></iframe>
+    </div>
+    <div *ngIf="showChart && chartNum == 2">
+        <div style="display: flex">
+            <div>
+                <h3 class="mb-3 font-medium" style="font-size: 24px">U.S Bubble Map - Session Vs Eddies</h3>
+            </div>
+            <div>
+                
+                <div class="d-inline-block" style="margin-left: 10px" ngbDropdown>
+                    <button
+                        class="btn btn-info d-flex align-items-center justify-content-end"
+                        id="dropdown1"
+                        ngbDropdownToggle
+                        style="width: 280px; overflow-x: hidden"
+                    >
+                        {{ selectedPage }}
+                    </button>
+                    <div ngbDropdownMenu aria-labelledby="dropdown1">
+                        <button class="dropdown-item" (click)="selectedPage = 'All'">All</button>
+                        <button class="dropdown-item" (click)="selectedPage = 'https://www.att.com/'">https://www.att.com/</button>
+                        <button class="dropdown-item" (click)="selectedPage = 'https://www.att.com/deals/'">https://www.att.com/deals/</button>
+                        <button class="dropdown-item" (click)="selectedPage = 'https://www.att.com/buy/phones/'">https://www.att.com/buy/phones/</button>
+                        <button
+                            class="dropdown-item"
+                            (click)="
+                    selectedPage =
+                      'https://www.att.com/buy/phones/apple-iphone-15-pro-max.html'
+                  "
+                        >
+                            https://www.att.com/buy/phones/apple-iphone-15-pro-max.html
+                        </button>
+                        <button
+                            class="dropdown-item"
+                            (click)="
+                    selectedPage =
+                      'https://www.att.com/buy/phones/planconfig/apple-iphone-15-pro-max.html?edit=losg-wls-new-001'
+                  "
+                        >
+                            https://www.att.com/buy/phones/planconfig/apple-iphone-15-pro-max.html?edit=losg-wls-new-001
+                        </button>
+                        <button
+                            class="dropdown-item"
+                            (click)="
+                    selectedPage =
+                      'https://www.att.com/buy/phones/config/apple-iphone-15-pro-max.html?edit=losg-wls-new-001'
+                  "
+                        >
+                            https://www.att.com/buy/phones/config/apple-iphone-15-pro-max.html?edit=losg-wls-new-001
+                        </button>
+
+                        <button class="dropdown-item" (click)="selectedPage = 'https://www.att.com/buy/byod/'">https://www.att.com/buy/byod/</button>
+                        <button class="dropdown-item" (click)="selectedPage = 'https://www.att.com/wireless/'">https://www.att.com/wireless/</button>
+                        <button class="dropdown-item" (click)="selectedPage = 'https://www.att.com/wireless/byod/'">https://www.att.com/wireless/byod/</button
+                        ><button
+                            class="dropdown-item"
+                            (click)="
+                    selectedPage =
+                      'https://www.att.com/buy/byod/identify?devicetype=phone'
+                  "
+                        >
+                            https://www.att.com/buy/byod/identify?devicetype=phone
+                        </button>
+                        <button class="dropdown-item" (click)="selectedPage = 'https://www.att.com/buy/byod/sim'">https://www.att.com/buy/byod/sim</button>
+                        <button
+                            class="dropdown-item"
+                            (click)="
+                    selectedPage =
+                      'https://www.att.com/buy/phones/planconfig/universal-sim-card-bring-your-own-phone.html?isByod=true&edit=losg-wls-new-003'
+                  "
+                        >
+                            https://www.att.com/buy/phones/planconfig/universal-sim-card-bring-your-own-phone.html?isByod=true&edit=losg-wls-new-003
+                        </button>
+                        <button
+                            class="dropdown-item"
+                            (click)="
+                    selectedPage =
+                      'https://www.att.com/buy/shoppingcart/?flowtype=wireless'
+                  "
+                        >
+                            https://www.att.com/buy/shoppingcart/?flowtype=wireless
+                        </button>
+                        <button
+                            class="dropdown-item"
+                            (click)="
+                    selectedPage = 'https://www.att.com/buy/checkout/checkoutview'
+                  "
+                        >
+                            https://www.att.com/buy/checkout/checkoutview
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: right" (click)="hideChart()">
+            <button type="button" class="btn-close" aria-label="Close"></button>
+        </div>
+        
+        <iframe
+            width="100%"
+            height="500"
+            frameborder="0"
+            src="https://observablehq.com/embed/c92cfff3ae9d51bf@237?cell=*&api_key=3c5b580d28ce8b662af9f2fb3daadc9866fa95ce"
+        ></iframe>
+    </div>
+    <div *ngIf="showChart && chartNum == 3">
+        <div style="display: flex">
+            <div>
+                <h3 class="mb-3 font-medium" style="font-size: 24px">Separated Bar Chart - Eddies Per Day</h3>
+            </div>
+        </div>
+        <div style="text-align: right" (click)="hideChart()">
+            <button type="button" class="btn-close" aria-label="Close"></button>
+        </div>
+        
+        <iframe
+            width="100%"
+            height="584"
+            frameborder="0"
+            src="
+      https://observablehq.com/embed/dfe341728bcc6598@720?cells=chart&api_key=50d48cbe404e8d0c5d16a74b199f459cb126a494"
+        ></iframe>
+    </div>
+    <div *ngIf="showChart && chartNum == 4">
+        <div style="display: flex">
+            <div>
+                <h3 class="mb-3 font-medium" style="font-size: 24px">Performance chart - Sessions vs Eddies</h3>
+            </div>
+            <div>
+                
+                <div class="d-inline-block" style="margin-left: 10px" ngbDropdown>
+                    <button
+                        class="btn btn-info d-flex align-items-center justify-content-end"
+                        id="dropdown1"
+                        ngbDropdownToggle
+                        style="width: 320px; overflow-x: hidden"
+                    >
+                        {{ selectedPage1 }}
+                    </button>
+                    <div ngbDropdownMenu aria-labelledby="dropdown1">
+                        <button class="dropdown-item" (click)="selectedPage = 'All'">All</button>
+                        <button class="dropdown-item" (click)="selectedPage = 'https://www.att.com/'">https://www.att.com/</button>
+                        <button class="dropdown-item" (click)="selectedPage = 'https://www.att.com/deals/'">https://www.att.com/deals/</button>
+                        <button class="dropdown-item" (click)="selectedPage = 'https://www.att.com/buy/phones/'">https://www.att.com/buy/phones/</button>
+                        <button
+                            class="dropdown-item"
+                            (click)="
+                    selectedPage =
+                      'https://www.att.com/buy/phones/apple-iphone-15-pro-max.html'
+                  "
+                        >
+                            https://www.att.com/buy/phones/apple-iphone-15-pro-max.html
+                        </button>
+                        <button
+                            class="dropdown-item"
+                            (click)="
+                    selectedPage =
+                      'https://www.att.com/buy/phones/planconfig/apple-iphone-15-pro-max.html?edit=losg-wls-new-001'
+                  "
+                        >
+                            https://www.att.com/buy/phones/planconfig/apple-iphone-15-pro-max.html?edit=losg-wls-new-001
+                        </button>
+                        <button
+                            class="dropdown-item"
+                            (click)="
+                    selectedPage =
+                      'https://www.att.com/buy/phones/config/apple-iphone-15-pro-max.html?edit=losg-wls-new-001'
+                  "
+                        >
+                            https://www.att.com/buy/phones/config/apple-iphone-15-pro-max.html?edit=losg-wls-new-001
+                        </button>
+
+                        <button class="dropdown-item" (click)="selectedPage = 'https://www.att.com/buy/byod/'">https://www.att.com/buy/byod/</button>
+                        <button class="dropdown-item" (click)="selectedPage = 'https://www.att.com/wireless/'">https://www.att.com/wireless/</button>
+                        <button class="dropdown-item" (click)="selectedPage = 'https://www.att.com/wireless/byod/'">https://www.att.com/wireless/byod/</button
+                        ><button
+                            class="dropdown-item"
+                            (click)="
+                    selectedPage =
+                      'https://www.att.com/buy/byod/identify?devicetype=phone'
+                  "
+                        >
+                            https://www.att.com/buy/byod/identify?devicetype=phone
+                        </button>
+                        <button class="dropdown-item" (click)="selectedPage = 'https://www.att.com/buy/byod/sim'">https://www.att.com/buy/byod/sim</button>
+                        <button
+                            class="dropdown-item"
+                            (click)="
+                    selectedPage =
+                      'https://www.att.com/buy/phones/planconfig/universal-sim-card-bring-your-own-phone.html?isByod=true&edit=losg-wls-new-003'
+                  "
+                        >
+                            https://www.att.com/buy/phones/planconfig/universal-sim-card-bring-your-own-phone.html?isByod=true&edit=losg-wls-new-003
+                        </button>
+                        <button
+                            class="dropdown-item"
+                            (click)="
+                    selectedPage =
+                      'https://www.att.com/buy/shoppingcart/?flowtype=wireless'
+                  "
+                        >
+                            https://www.att.com/buy/shoppingcart/?flowtype=wireless
+                        </button>
+                        <button
+                            class="dropdown-item"
+                            (click)="
+                    selectedPage = 'https://www.att.com/buy/checkout/checkoutview'
+                  "
+                        >
+                            https://www.att.com/buy/checkout/checkoutview
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: right" (click)="hideChart()">
+            <button type="button" class="btn-close" aria-label="Close"></button>
+        </div>
+        
+        <iframe
+            width="100%"
+            height="584"
+            frameborder="0"
+            src="
+      https://observablehq.com/embed/8ed9143cd522fb0d@568?cells=chart&api_key=5b079e97e6005e8233dd2fc55081238618b10293"
+        ></iframe>
+    </div> -->
+</div>

@@ -1,0 +1,47 @@
+<ol class="list-group comment-group">
+    <li class="list-group-item d-flex justify-content-between align-items-start" [class.active]="active === i" *ngFor="let item of sourceData; let i = index">
+        <div
+            (click)="setvideosource(item, i)"
+            class="m-1 grid cursor-pointer grid-cols-3 gap-2 rounded-sm border p-1"
+            [class]="active == i ? 'bg-gray-300' : ''"
+        >
+            <div class="col-span-1">
+                <img [src]="item.thumbnail" class="img-thumbnail" alt="..." />
+            </div>
+            <div class="col-span-2 flex flex-col gap-1">
+                <button *ngIf="item['Type'].trim().includes('Bug')" type="button" class="btn btn-warning btn-sm self-start text-xs">
+                    {{ item['Type'] }}
+                </button>
+                <button *ngIf="item['Type'].trim().includes('Testimonial')" type="button" class="btn btn-primary btn-sm self-start text-xs">
+                    {{ item['Type'] }}
+                </button>
+                <button *ngIf="item['Type'].trim().includes('Complaint')" type="button" class="btn btn-danger btn-sm self-start text-xs">
+                    {{ item['Type'] }}
+                </button>
+                <button *ngIf="item['Type'].trim().includes('Enhancement')" type="button" class="btn btn-info btn-sm self-start text-xs">
+                    {{ item['Type'] }}
+                </button>
+                <button *ngIf="item['Type'].trim().includes('Issue')" type="button" class="btn btn-secondary cover btn-sm self-start text-xs">
+                    {{ item['Type'] }}
+                </button>
+                <div class="text-base">{{ item['Title for session'] }}</div>
+                <div class="self-end text-xs">{{ item['Response Date'] }}</div>
+            </div>
+        </div>
+
+        <!-- <div class="row">
+            <div class="col-7 align-self-center">
+                <div class="fw-bold align-middle" style="font-size: small">{{ item['Title for session'] }}</div>
+                
+                <div class="align-middle" style="font-size: xx-small">{{ item['Response Date'] }}</div>
+            </div>
+            <div class="col-1">
+                <span *ngIf="item['Emotion'].trim().includes('unsure')"><i class="bi bi-emoji-smile text-primary"></i></span>
+                <span *ngIf="item['Emotion'].trim().includes('Satisfied')"><i class="bi bi-emoji-neutral"></i></span>
+                <span *ngIf="item['Emotion'].trim() == 'Frustrated'"><i class="bi bi-emoji-angry"></i></span>
+                <span *ngIf="item['Emotion'].trim() == 'Angry'"><i class="bi bi-emoji-angry"></i></span>
+                <span *ngIf="item['Emotion'].trim() == 'Happy'"><i class="bi bi-emoji-sunglasses"></i></span>
+            </div>
+        </div> -->
+    </li>
+</ol>

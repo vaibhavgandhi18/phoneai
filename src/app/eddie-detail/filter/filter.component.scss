@@ -1,0 +1,90 @@
+.custom-multiselect.ng-select .ng-select-container {
+    height: 38px;
+    box-shadow: none;
+}
+
+.custom-multiselect.ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-placeholder,
+.custom-multiselect.ng-select.ng-select-single .ng-select-container .ng-value-container .ng-input {
+    top: 50%;
+    transform: translateY(-50%);
+    padding-left: 0;
+    padding-bottom: 0;
+    color: inherit;
+}
+
+.custom-multiselect.ng-select.ng-select-multiple .ng-select-container .ng-value-container {
+    padding-top: 0;
+}
+
+.custom-multiselect.ng-select.ng-select-single .ng-select-container .ng-value-container,
+.custom-multiselect.ng-select.ng-select-single .ng-select-container .ng-value-container .ng-input,
+.custom-multiselect.ng-select.ng-select-multiple .ng-select-container .ng-value-container {
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+}
+
+.custom-multiselect.ng-select .ng-select-container .ng-value-container .ng-input > input {
+    color: inherit;
+}
+
+.custom-multiselect.ng-select .ng-select-container,
+.custom-multiselect.ng-select .ng-dropdown-panel,
+.custom-multiselect.ng-select .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+    gap: 2rem;
+    border-color: rgb(224, 230, 237);
+    background-color: white;
+    color: inherit;
+}
+
+.custom-multiselect.ng-select .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected,
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected.ng-option-marked,
+.custom-multiselect.ng-select .ng-dropdown-panel .ng-dropdown-panel-items .ng-option:hover {
+    background-color: #f6f6f6;
+}
+
+.custom-multiselect.ng-select .ng-dropdown-panel .ng-dropdown-panel-items .ng-optgroup,
+.custom-multiselect.ng-select .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-disabled,
+.custom-multiselect.ng-select .ng-dropdown-panel .ng-dropdown-panel-items .ng-optgroup:hover,
+.custom-multiselect.ng-select .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-disabled:hover {
+    background-color: transparent;
+    color: #999;
+}
+
+.custom-multiselect.ng-select .ng-select-container .ng-value-container {
+    gap: 2rem;
+}
+
+.custom-multiselect.ng-select .ng-arrow-wrapper {
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+}
+
+.custom-multiselect.ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value {
+    margin: 0;
+    background-color: rgb(33 150 243);
+    color: white;
+    padding: 5px;
+}
+
+.custom-multiselect.ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value .ng-value-icon:hover {
+    background-color: rgb(33 150 243);
+}
+
+.custom-multiselect.ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-placeholder {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.custom-option {
+    display: flex;
+    align-items: center;
+}
+
+.custom-option input[type='checkbox'] {
+    margin-right: 0.5rem;
+}

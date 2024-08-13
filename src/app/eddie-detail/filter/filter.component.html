@@ -1,0 +1,246 @@
+<!-- <div class="card">
+    <div class="accordion" id="accordionExample">
+        <div #accordionitem1 class="accordion-item" (click)="accordianclick(accordionitem1)">
+            <h2 class="accordion-header accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" aria-expanded="true" aria-controls="collapseOne">Extraction type</button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div class="row" style="padding: 0px; width: 100%">
+                        <div class="col" style="padding: 0px" *ngFor="let item of uniqueTypes; let i = index">
+                            <button type="button" class="btn btn-info btn-small" style="margin: 2px; height: 30px; padding: 3px" (click)="typefilter(item)">
+                                {{ item }}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div #accordionitem2 class="accordion-item active" (click)="accordianclick(accordionitem2)">
+            <h2 class="accordion-header" id="headingTwo">
+                <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
+                >
+                    Emotion
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div class="row" style="padding: 0px; width: 100%">
+                        <div class="col" style="padding: 0px" *ngFor="let item of uniqueEmotion; let i = index">
+                            <button type="button" class="btn btn-info btn-small" style="margin: 2px; height: 30px; padding: 3px" (click)="emotionfilter(item)">
+                                {{ item }}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div #accordionitem3 class="accordion-item active" (click)="accordianclick(accordionitem3)">
+            <h2 class="accordion-header" id="headingThree">
+                <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree"
+                    aria-expanded="false"
+                    aria-controls="collapseThree"
+                >
+                    CSAT score
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div class="row" style="padding: 0px; width: 100%">
+                        <label for="customRange1" class="form-label"></label>
+                        <input type="range" class="form-range" id="customRange1" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div #accordionitem4 class="accordion-item active" (click)="accordianclick(accordionitem4)">
+            <h2 class="accordion-header" id="headingThree">
+                <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree"
+                    aria-expanded="false"
+                    aria-controls="collapseThree"
+                >
+                    Severity
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div class="row" style="padding: 0px; width: 100%">
+                        <div class="col" style="padding: 0px" *ngFor="let item of uniqueSeverity; let i = index">
+                            <button type="button" class="btn btn-info btn-small" style="margin: 2px; height: 30px; padding: 3px" (click)="severityfilter(item)">
+                                {{ item }}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div #accordionitem5 class="accordion-item active" (click)="accordianclick(accordionitem5)">
+            <h2 class="accordion-header" id="headingThree">
+                <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree"
+                    aria-expanded="false"
+                    aria-controls="collapseThree"
+                >
+                    Keywords
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div class="row" style="padding: 0px; width: 100%"></div>
+                </div>
+            </div>
+        </div>
+        <div #accordionitem6 class="accordion-item active" (click)="accordianclick(accordionitem6)">
+            <h2 class="accordion-header" id="headingThree">
+                <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree"
+                    aria-expanded="false"
+                    aria-controls="collapseThree"
+                >
+                    Reset
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div class="row" style="padding: 0px; width: 100%">
+                        <div class="col" style="padding: 0px">
+                            <button type="button" class="btn btn-info btn-small" style="margin: 5px; height: 30px; padding: 3px" (click)="resetfilter()">
+                                Reset Filter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+<div class="flex justify-between">
+    <div class="prose flex-1 dark:text-white-light">
+        <h5 class="m-0 font-normal dark:text-white-light">
+            Filters <span *ngIf="sourcedata.length > 0">({{ sourcedata.length }})</span>
+        </h5>
+    </div>
+
+    <div class="mt-4 flex gap-2">
+        <button type="button" class="btn btn-outline-dark" (click)="resetfilter()">Clear</button>
+        <div class="flex w-full flex-wrap justify-around gap-7">
+            <div hlMenu class="dropdown">
+                <button type="button" hlMenuButton class="btn btn-outline-primary dropdown-toggle">
+                    {{ sortOptions[selectedsortId] }}
+                    <icon-caret-down class="inline-block ltr:ml-1 rtl:mr-1" />
+                </button>
+                <ul *hlMenuItems @toggleAnimation class="whitespace-nowrap ltr:right-0 rtl:left-0">
+                    <li><a (click)="sortPlayback('sortByNewest')" href="javascript:;" *hlMenuItem="let menuItem">Sort by Newest</a></li>
+                    <li><a (click)="sortPlayback('sortByOldest')" href="javascript:;" *hlMenuItem="let menuItem">Sort by Oldest</a></li>
+                    <li><a (click)="sortPlayback('mintoMaxDuration')" href="javascript:;" *hlMenuItem="let menuItem">Min to Max Duration</a></li>
+                    <li><a (click)="sortPlayback('maxtoMinDuration')" href="javascript:;" *hlMenuItem="let menuItem">Max to Min Duration</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-6 flex justify-center gap-2 align-middle">
+    <div>
+        <input type="text" placeholder="Search by Keyword" class="form-input" style="flex: 1" />
+    </div>
+    <ng-select
+        [items]="uniqueTypes"
+        [(ngModel)]="extractionType"
+        [multiple]="true"
+        [clearable]="true"
+        (add)="dofilter()"
+        (remove)="dofilter()"
+        (clear)="resetOnefilter('extractionType')"
+        placeholder="Extraction Type"
+        class="custom-multiselect"
+        style="flex: 1"
+        [closeOnSelect]="false"
+        ><ng-template ng-label-tmp let-item="item">
+            {{ item }}
+        </ng-template>
+        <ng-template ng-option-tmp let-item="item" let-index="index">
+            <div class="custom-option">
+                <input type="checkbox" [checked]="extractionType.includes(item)" />
+                <span>{{ item }}</span>
+            </div>
+        </ng-template>
+    </ng-select>
+    <ng-select
+        [items]="uniqueEmotion"
+        [(ngModel)]="emotionType"
+        [multiple]="true"
+        [clearable]="true"
+        (add)="dofilter()"
+        (remove)="dofilter()"
+        (clear)="resetOnefilter('emotionType')"
+        placeholder="Emotion"
+        class="custom-multiselect"
+        style="flex: 1"
+        [closeOnSelect]="false"
+        ><ng-template ng-label-tmp let-item="item"> {{ item }} </ng-template>
+        <ng-template ng-option-tmp let-item="item" let-index="index">
+            <div class="custom-option">
+                <input type="checkbox" [checked]="emotionType.includes(item)" />
+                <span>{{ item }}</span>
+            </div>
+        </ng-template>
+    </ng-select>
+
+    <ng-select
+        [items]="uniqueSeverity"
+        [(ngModel)]="severityType"
+        [multiple]="true"
+        [clearable]="true"
+        (add)="dofilter()"
+        (remove)="dofilter()"
+        (clear)="resetOnefilter('severityType')"
+        placeholder="Severity"
+        class="custom-multiselect"
+        style="flex: 1"
+        [closeOnSelect]="false"
+        ><ng-template ng-label-tmp let-item="item">
+            {{ item }}
+        </ng-template>
+        <ng-template ng-option-tmp let-item="item" let-index="index">
+            <div class="custom-option">
+                <input type="checkbox" [checked]="severityType.includes(item)" />
+                <span>{{ item }}</span>
+            </div>
+        </ng-template>
+    </ng-select>
+
+    <ng-select
+        [items]="uniqueKeywords"
+        [(ngModel)]="uniqueType"
+        [multiple]="true"
+        [clearable]="false"
+        placeholder="Keywords"
+        class="custom-multiselect"
+        style="flex: 1"
+    >
+    </ng-select>
+    <div class="flex flex-col">
+        <div class="self-center dark:text-white-light">CSAT</div>
+        <input type="range" [(ngModel)]="csatSlider" style="flex: 1" class="w-full py-2.5" min="0" placeholder="CSAT" max="7" />
+    </div>
+</div>
