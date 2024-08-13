@@ -82,14 +82,18 @@
       <div class="border-b p-3 text-center text-lg font-semibold">
         Call Transcript
       </div>
-
-      <div
-        class="p-3"
-        *ngFor="let message of displayedMessages"
-        [ngClass]="message.sender"
-      >
-        <strong>{{ message.sender }}:</strong> {{ message.displayedText }}
-      </div>
+      <ng-scrollbar class="!h-[290px]">
+        <div class="p-3" *ngIf="callStatus == 'started'">
+          <strong>Call established ...</strong>
+        </div>
+        <div
+          class="p-3"
+          *ngFor="let message of displayedMessages"
+          [ngClass]="message.sender"
+        >
+          <strong>{{ message.sender }}:</strong> {{ message.displayedText }}
+        </div>
+      </ng-scrollbar>
     </div>
   </div>
 </div>
