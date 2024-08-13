@@ -48,7 +48,7 @@ export class ServicePlaygroundComponent
       sender: "EVA",
       message:
         "Hi, is this Richa Rai? I'm calling from AT&T Express Ticketing, just following up on your inquiry.",
-      interval: 1000,
+      interval: 500,
     },
     { sender: "Customer", message: "Thanks for your call.", interval: 1000 },
     {
@@ -56,7 +56,7 @@ export class ServicePlaygroundComponent
       message: "Awesome, hi Richa. Is now an okay time to talk?",
       interval: 1000,
     },
-    { sender: "Customer", message: "Yes. We can talk.", interval: 1000 },
+    { sender: "Customer", message: "Yes. We can talk.", interval: 2000 },
     {
       sender: "EVA",
       message:
@@ -204,7 +204,7 @@ export class ServicePlaygroundComponent
   typeMessage(message: Message): void {
     let currentIndex = 0;
     let displayedText = "";
-    const typingSpeed = 120; // Adjust typing speed as needed
+    const typingSpeed = 90; // Adjust typing speed as needed
 
     const typeInterval = setInterval(() => {
       displayedText += message.message.charAt(currentIndex);

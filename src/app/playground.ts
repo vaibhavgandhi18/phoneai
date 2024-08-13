@@ -35,13 +35,95 @@ export class PlaygroundComponent implements OnInit, OnDestroy {
   callStatus = "";
 
   messages: Message[] = [
-    { sender: "User", message: "Hi there!", interval: 1000 },
-    { sender: "Bot", message: "Hello! How can I help you?", interval: 2000 },
-    { sender: "User", message: "I need some assistance.", interval: 1500 },
     {
-      sender: "Bot",
-      message: "Sure, what do you need help with?",
+      sender: "Ask Eva",
+      message:
+        "Hello, thank you for calling AT&T customer support. My name is Ask Eva. How can I assist you today?",
+      interval: 500,
+    },
+    {
+      sender: "Breezy",
+      message:
+        "Hello. Thank you for answering. My name is Alex.Calling about an issue with my current month's mobile bill.I noticed an additional charge of $100 for international roaming and I'd like to dispute it.Could you please help me with that?",
+      interval: 500,
+    },
+
+    { sender: "Ask Eva", message: "I apologies-", interval: 1500 },
+    {
+      sender: "Ask Eva",
+      message:
+        "Yes, of course, Alex. Your account number can be found at the top right corner of your bill, and your PIN is the four-digit code you created when you set up your account. Can you please locate those for me?",
       interval: 2500,
+    },
+    {
+      sender: "Breezy",
+      message: "Wait",
+      interval: 2500,
+    },
+    {
+      sender: "Breezy",
+      message: "Hello? Are you still there? ",
+      interval: 2500,
+    },
+    {
+      sender: "Ask Eva",
+      message:
+        "Yes, I'm still here, Alex. Please go ahead and share your account number and PIN with me.",
+      interval: 2500,
+    },
+    {
+      sender: "Breezy",
+      message: "Already did.",
+      interval: 2500,
+    },
+    {
+      sender: "Ask Eva",
+      message: "My account number is 85213456789.And my PIN is 1234.",
+      interval: 2500,
+    },
+    {
+      sender: "Ask Eva",
+      message:
+        "Thank you. Alright, Alex, I've got that. Let me just check on the status of your account. Can you tell me, where did you travel to that incurred the international roaming charge?",
+      interval: 2500,
+    },
+    {
+      sender: "Breezy",
+      message:
+        "I actually didn't travel anywhere. That's why I'm disputing the charge.",
+      interval: 1500,
+    },
+    {
+      sender: "Ask Eva",
+      message:
+        "Okay, Alex, it was my pleasure to assist you with your billing issue. If you have any other questions or concerns in the future, don't hesitate to reach out to us. Have a great day.",
+      interval: 2500,
+    },
+    {
+      sender: "Breezy",
+      message:
+        "Either way is fine. Thank you. Can just email me. That's the easiest.",
+      interval: 1500,
+    },
+    {
+      sender: "Ask Eva",
+      message: "You're welcome",
+      interval: 2500,
+    },
+    {
+      sender: "Breezy",
+      message: "Thank you again. Goodbye.",
+      interval: 150,
+    },
+    {
+      sender: "Ask Eva",
+      message: "You're welcome, Alex. Goodbye.",
+      interval: 250,
+    },
+    {
+      sender: "Breezy",
+      message: "Ended call",
+      interval: 0,
     },
   ];
   displayedMessages: { sender: string; displayedText: string }[] = [];
@@ -94,7 +176,7 @@ export class PlaygroundComponent implements OnInit, OnDestroy {
   typeMessage(message: Message): void {
     let currentIndex = 0;
     let displayedText = "";
-    const typingSpeed = 120; // Adjust typing speed as needed
+    const typingSpeed = 90; // Adjust typing speed as needed
 
     const typeInterval = setInterval(() => {
       displayedText += message.message.charAt(currentIndex);
