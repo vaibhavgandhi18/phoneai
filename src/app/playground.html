@@ -33,7 +33,26 @@
           required
           *ngIf="!userAgentInitiateCall"
         ></textarea>
-
+        <label class="mt-2 text-base">Voice: </label>
+        <div class="flex items-center justify-center gap-5">
+          <ng-select
+            [items]="['Alexa','Josh','Nat','Derek','Florian']"
+            [placeholder]="'Voice'"
+            [searchable]="false"
+            [clearable]="false"
+            class="custom-multiselect w-96 flex-grow self-stretch"
+          >
+          </ng-select>
+        </div>
+        <label class="mt-2 text-base">Temperature: {{tempSlider}} </label>
+        <input
+          type="range"
+          [(ngModel)]="tempSlider"
+          class="w-full"
+          min="0"
+          placeholder="Temperature"
+          max="10"
+        />
         <button
           type="submit"
           class="btn btn-primary !mt-6"

@@ -33,7 +33,7 @@ export class PlaygroundComponent implements OnInit, OnDestroy {
   private intervalId: any;
   userAgentInitiateCall = false;
   callStatus = "";
-
+  tempSlider = 5;
   messages: Message[] = [
     {
       sender: "Ask Eva",
@@ -55,7 +55,8 @@ export class PlaygroundComponent implements OnInit, OnDestroy {
     },
     {
       sender: "Breezy",
-      message: "Okay. Let me just grab my bill real quick.Can you please hold on for just a second?",
+      message:
+        "Okay. Let me just grab my bill real quick.Can you please hold on for just a second?",
       interval: 8000,
     },
     {
@@ -93,27 +94,32 @@ export class PlaygroundComponent implements OnInit, OnDestroy {
     },
     {
       sender: "Breezy",
-      message: "I didn't use any international roaming services, so I'm not sure why I was charged $100.",
+      message:
+        "I didn't use any international roaming services, so I'm not sure why I was charged $100.",
       interval: 1000,
     },
     {
       sender: "Ask Eva",
-      message:"I understand your concern, Alex. I'm going to go ahead and process a dispute for this charge. I'll also check to see if there were any errors on our end that may have caused this charge to appear on your bill.",
+      message:
+        "I understand your concern, Alex. I'm going to go ahead and process a dispute for this charge. I'll also check to see if there were any errors on our end that may have caused this charge to appear on your bill.",
       interval: 1000,
     },
     {
       sender: "Breezy",
-      message: "Okay. That's great. I appreciate your help with it. Can you please let me know what the outcome is and when I can expect the correction to be made?",
+      message:
+        "Okay. That's great. I appreciate your help with it. Can you please let me know what the outcome is and when I can expect the correction to be made?",
       interval: 1000,
     },
     {
       sender: "Ask Eva",
-      message: "Yes, Alex, I've submitted the dispute and our team will review it within the next three to five business days. You should receive an update via email or a phone call from our team once the dispute is resolved. Is there a preferred method of contact you'd like us to use to reach out to you?",
+      message:
+        "Yes, Alex, I've submitted the dispute and our team will review it within the next three to five business days. You should receive an update via email or a phone call from our team once the dispute is resolved. Is there a preferred method of contact you'd like us to use to reach out to you?",
       interval: 1000,
     },
     {
       sender: "Breezy",
-      message: "Either way is fine. Thank you. Can just email me. That's the easiest.",
+      message:
+        "Either way is fine. Thank you. Can just email me. That's the easiest.",
       interval: 1000,
     },
     {
@@ -124,8 +130,7 @@ export class PlaygroundComponent implements OnInit, OnDestroy {
     },
     {
       sender: "Breezy",
-      message:
-        "Thank you again. Goodbye.",
+      message: "Thank you again. Goodbye.",
       interval: 1000,
     },
     {
