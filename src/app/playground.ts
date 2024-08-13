@@ -117,25 +117,33 @@ export class PlaygroundComponent implements OnInit, OnDestroy {
       this.displayedMessages.push({ sender, displayedText });
     }
   }
-  userAgentPost() {
+  userAgentPost(tune: HTMLAudioElement, callLog: HTMLAudioElement) {
     this.userAgentInitiateCall = true;
-    this.startTimer();
+    this.startTimer(tune, callLog);
     // this.aiDataService.userAgentCall(4254926201, this.userPrompt).subscribe((response) => {
     //     console.log(response);
     // });
   }
-  startTimer(): void {
+  startTimer(tune: HTMLAudioElement, callLog: HTMLAudioElement): void {
     this.callStatus = "outgoing";
-    this.displayNextMessage();
-    this.intervalId = setInterval(() => {
-      this.callStatus = "started";
-      this.seconds++;
 
-      if (this.seconds === 60) {
-        this.minutes++;
-        this.seconds = 0;
-      }
-    }, 1000);
+    tune.play();
+
+    setTimeout(() => {
+      tune.pause();
+
+      callLog.play();
+      this.displayNextMessage();
+      this.callStatus = "started";
+      this.intervalId = setInterval(() => {
+        this.seconds++;
+
+        if (this.seconds === 60) {
+          this.minutes++;
+          this.seconds = 0;
+        }
+      }, 1000);
+    }, 6000);
   }
 
   clearTimer(): void {

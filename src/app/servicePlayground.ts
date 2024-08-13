@@ -1,4 +1,10 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import {
+  AfterViewInit,
+  Component,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+} from "@angular/core";
 import { Store } from "@ngrx/store";
 import { animate, style, transition, trigger } from "@angular/animations";
 import { Router } from "@angular/router";
@@ -24,7 +30,9 @@ interface Message {
     ]),
   ],
 })
-export class ServicePlaygroundComponent implements OnInit, OnDestroy {
+export class ServicePlaygroundComponent
+  implements OnInit, OnDestroy, AfterViewInit
+{
   store: any;
   minutes: number = 0;
   seconds: number = 0;
@@ -33,6 +41,8 @@ export class ServicePlaygroundComponent implements OnInit, OnDestroy {
   callStatus = "";
 
   userPrompt = "";
+  callLog: any;
+  callerTune: any;
   messages: Message[] = [
     { sender: "User", message: "Hi there!", interval: 1000 },
     { sender: "Bot", message: "Hello! How can I help you?", interval: 2000 },
@@ -52,6 +62,20 @@ export class ServicePlaygroundComponent implements OnInit, OnDestroy {
   ) {
     this.initStore();
     this.isLoading = false;
+    this.callerTune = new Audio();
+    this.callerTune.src = "../assets/caller_tune.wav"; // Path to your audio file
+    // this.callerTune.load();
+    // this.callerTune.play();
+    this.callLog = new Audio();
+    this.callLog.src = "../assets/evaCallLog.wav"; // Path to your audio file
+    this.callLog.load();
+  }
+  ngAfterViewInit(): void {
+    this.callerTune.load();
+
+    setTimeout(() => {
+      this.callerTune.play();
+    }, 2000);
   }
   ngOnInit(): void {}
   ngOnDestroy(): void {
@@ -124,6 +148,9 @@ export class ServicePlaygroundComponent implements OnInit, OnDestroy {
   }
   startTimer(): void {
     this.callStatus = "started";
+    this.callerTune.pause();
+    this.callLog.play();
+
     this.displayNextMessage();
     this.intervalId = setInterval(() => {
       this.seconds++;
