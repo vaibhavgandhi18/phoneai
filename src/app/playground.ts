@@ -34,6 +34,8 @@ export class PlaygroundComponent implements OnInit, OnDestroy {
   userAgentInitiateCall = false;
   callStatus = "";
   tempSlider = 5;
+  callLog: any;
+  callerTune: any;
   messages: Message[] = [
     {
       sender: "Ask Eva",
@@ -157,6 +159,8 @@ export class PlaygroundComponent implements OnInit, OnDestroy {
   ngOnInit(): void {}
   ngOnDestroy(): void {
     this.clearTimer();
+    this.callerTune.pause();
+    this.callLog.pause();
   }
   async initStore() {
     this.storeData
@@ -225,14 +229,16 @@ export class PlaygroundComponent implements OnInit, OnDestroy {
     // });
   }
   startTimer(tune: HTMLAudioElement, callLog: HTMLAudioElement): void {
+    this.callLog = callLog;
+    this.callerTune = tune;
     this.callStatus = "outgoing";
 
-    tune.play();
+    this.callerTune.play();
 
     setTimeout(() => {
-      tune.pause();
+      this.callerTune.pause();
 
-      callLog.play();
+      this.callLog.play();
       this.displayNextMessage();
       this.callStatus = "started";
       this.intervalId = setInterval(() => {

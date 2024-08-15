@@ -28,6 +28,7 @@ import { FaqComponent } from "./pages/faq";
 
 import { PlaygroundComponent } from "./playground";
 import { ServicePlaygroundComponent } from "./servicePlayground";
+import { AskEVAPlaygroundComponent } from "./askEVAPlayground";
 
 export const routes: Routes = [
   {
@@ -45,6 +46,11 @@ export const routes: Routes = [
         path: "service-bot-playground",
         component: ServicePlaygroundComponent,
         title: "EVA Playground",
+      },
+      {
+        path: "ask-eva-agent-playground",
+        component: AskEVAPlaygroundComponent,
+        title: "Ask ATT Agent Playground",
       },
 
       //apps

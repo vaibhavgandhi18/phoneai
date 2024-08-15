@@ -16,8 +16,8 @@ interface Message {
 }
 @Component({
   moduleId: module.id,
-  templateUrl: "./servicePlayground.html",
-  styleUrls: ["./servicePlayground.scss"],
+  templateUrl: "./askEVAPlayground.html",
+  styleUrls: ["./askEVAPlayground.scss"],
   animations: [
     trigger("toggleAnimation", [
       transition(":enter", [
@@ -30,7 +30,7 @@ interface Message {
     ]),
   ],
 })
-export class ServicePlaygroundComponent
+export class AskEVAPlaygroundComponent
   implements OnInit, OnDestroy, AfterViewInit
 {
   store: any;
@@ -45,94 +45,148 @@ export class ServicePlaygroundComponent
   callerTune: any;
   messages: Message[] = [
     {
-      sender: "EVA",
+      sender: "Ask Eva",
       message:
-        "Hi, is this Richa Rai? I'm calling from AT&T Express Ticketing, just following up on your inquiry.",
-      interval: 200,
-    },
-    { sender: "Customer", message: "Thanks for your call.", interval: 600 },
-    {
-      sender: "EVA",
-      message: "Awesome, hi Richa. Is now an okay time to talk?",
-      interval: 200,
-    },
-    { sender: "Customer", message: "Yes. We can talk.", interval: 600 },
-    {
-      sender: "EVA",
-      message:
-        "Absolutely, I just wanted to check in and ask a few more questions. Could you share a bit more info about what the issue is with your ticket, 000000328567617?",
-      interval: 200,
+        "Hi, is this Vaibhav Gandhi? I'm calling from AT&T, just following up on your form inquiry.",
+      interval: 500,
     },
     {
       sender: "Customer",
-      message: "I'm facing network latency issue.",
-      interval: 200,
+      message: "Hey. Hi. Speaking.",
+      interval: 500,
     },
     {
-      sender: "EVA",
+      sender: "Ask Eva",
+      message: "Awesome, hi, is now an okay time to talk?",
+      interval: 500,
+    },
+    {
+      sender: "Customer",
+      message: "Yeah. Sure.",
+      interval: 0,
+    },
+    {
+      sender: "Ask Eva",
       message:
-        "I apologize for the inconvenience. I'd be happy to help escalate this ticket for you. Can you tell me a little bit more about what you're experiencing with the network latency issue?",
-      interval: 200,
+        "Absolutely, I just wanted to check in and ask a few more questions. Could you share a bit more info about the service you are looking for?",
+      interval: 500,
     },
     {
       sender: "Customer",
       message:
-        "So this issue is intermittent. And it has started coming around 4 to 5 days week.",
-      interval: 100,
-    },
-    { sender: "EVA", message: "Okay, so the i-", interval: 100 },
-    {
-      sender: "Customer",
-      message: "And my all employees are getting affected",
-      interval: 100,
+        "Yeah. So I'm trying to set up a new workspace and need Internet services there.",
+      interval: 0,
     },
     {
-      sender: "EVA",
+      sender: "Ask Eva",
       message:
-        "I understand. So, it sounds like the intermittent network latency issue is affecting all of your employees, and it started around four to five days ago. Have you noticed any patterns or triggers that might be contributing to this issue?",
-      interval: 100,
-    },
-    { sender: "Customer", message: "No.", interval: 100 },
-    {
-      sender: "EVA",
-      message:
-        "Okay, no problem. I'm going to go ahead and escalate this ticket for you. I'll make sure to add some notes to the ticket so our team can investigate this further. Can you please confirm your availability for the next twenty-four to forty-eight hours in case our team needs to reach out to you for further troubleshooting?",
-      interval: 100,
+        "Okay, so you're looking to get internet set up at your new workspace. Are you interested in our AT&T Fiber internet services for your business?",
+      interval: 0,
     },
     {
       sender: "Customer",
-      message: "It would be around I will be available 9 to 5.",
-      interval: 100,
+      message: "Yes",
+      interval: 0,
     },
     {
-      sender: "EVA",
+      sender: "Ask Eva",
       message:
-        "Perfect, thank you for letting me know. I'll make sure to note that you're available between 9 AM and 5 PM. I'll also go ahead and escalate this ticket to our advanced technical support team. They'll reach out to you within the next twenty-four to forty-eight hours to further assist you with the network latency issue. Is there anything else I can assist you with today?",
-      interval: 100,
+        "Great! AT&T Fiber is a fantastic option for businesses. Can you tell me a little bit more about your internet needs? How many devices will be connected to the internet at your workspace?",
+      interval: 0,
     },
     {
       sender: "Customer",
-      message: "I'm expecting a follow-up call.",
-      interval: 100,
-    },
-    {
-      sender: "EVA",
       message:
-        "Absolutely, you can expect a follow-up call from our advanced technical support team within the next twenty four to forty eight hours. They'll be in touch with you to discuss the progress on your ticket and work towards resolving the network latency issue. Is there a specific time of day that works best for you to receive that follow-up call?",
-      interval: 100,
+        "I believe 150 will be connected and it's a development team that will be there, so we will be needing high bandwidth",
+      interval: 0,
     },
-    { sender: "Customer", message: "As early as 9 AM to 5 PM.", interval: 100 },
     {
-      sender: "EVA",
+      sender: "Ask Eva",
       message:
-        "Got it, I've noted that you're available for a follow-up call between 9 AM and 5 PM. We'll make sure to schedule the call within that timeframe. Thank you for your patience and cooperation, Richa. I'm going to go ahead and wrap up this call. Is there anything else you'd like to add or discuss before we hang up?",
-      interval: 100,
+        "I totally understand. A development team requires a lot of bandwidth for their work. We have some great options for high-bandwidth internet with our AT&T Fiber services. Can you tell me a little bit more about your current timeline for getting this set up?",
+      interval: 0,
     },
-    { sender: "Customer", message: "No. Thanks so much.", interval: 100 },
     {
-      sender: "EVA",
-      message: "You're welcome, Richa. It was my pleasure to assist you.",
-      interval: 100,
+      sender: "Customer",
+      message: "Oh, like, within a week or so?",
+      interval: 0,
+    },
+    {
+      sender: "Ask Eva",
+      message:
+        "Okay, so you're looking to get set up within the next week or so. That's a pretty tight timeline. Let me check on availability in your area. Can you please confirm your address for me?",
+      interval: 0,
+    },
+    {
+      sender: "Customer",
+      message: "So it's 20205 North Creek Parkway, Bothell, Washington",
+      interval: 0,
+    },
+    {
+      sender: "Ask Eva",
+      message: "Wait",
+      interval: 0,
+    },
+    {
+      sender: "Ask Eva",
+      message:
+        "I apologize for the pause. I'm checking on the availability of our AT&T Fiber services at your location. Can you please confirm that you're still with me?",
+      interval: 0,
+    },
+    {
+      sender: "Customer",
+      message: "Yeah. I'm there.",
+      interval: 0,
+    },
+    {
+      sender: "Ask Eva",
+      message:
+        "Okay, great. I've checked on the availability, and I'm happy to report that our AT&T Fiber services are available at your location. I can offer you a plan that should meet your high-bandwidth needs.",
+      interval: 0,
+    },
+    {
+      sender: "Customer",
+      message: "Sure.",
+      interval: 0,
+    },
+    {
+      sender: "Ask Eva",
+      message:
+        "Our business fiber plans start at five hundred ninety-five dollars per month for a one-gigabit connection. We also have a two-gigabit connection available for nine hundred ninety-five dollars per month. Which of these options sounds more suitable for your development team?",
+      interval: 0,
+    },
+    {
+      sender: "Customer",
+      message: "I think the 2 gigabit connection is good.",
+      interval: 0,
+    },
+    {
+      sender: "Ask Eva",
+      message:
+        "The two-gigabit connection will definitely provide your development team with the high-bandwidth internet they need. I can go ahead and set up the installation for you. Would you like to schedule the installation for within the next week, as you mentioned earlier?",
+      interval: 0,
+    },
+    {
+      sender: "Customer",
+      message: "Yes, please.",
+      interval: 0,
+    },
+    {
+      sender: "Ask Eva",
+      message:
+        "I've gone ahead and scheduled the installation for within the next week. You'll receive a confirmation email with the exact date and time of the installation. Is there anything else I can assist you with today, or is that all taken care of?",
+      interval: 0,
+    },
+    {
+      sender: "Customer",
+      message: "That is all.",
+      interval: 0,
+    },
+    {
+      sender: "Ask Eva",
+      message:
+        "Alright, thank you so much for your time today. I'm glad we could get your AT&T Fiber internet set up for your new workspace. You should receive a confirmation email shortly. Have a great day, and thank you for choosing AT&T!",
+      interval: 0,
     },
   ];
 
@@ -150,7 +204,7 @@ export class ServicePlaygroundComponent
     // this.callerTune.load();
     // this.callerTune.play();
     this.callLog = new Audio();
-    this.callLog.src = "../assets/evaCallLog.wav"; // Path to your audio file
+    this.callLog.src = "../assets/SalesCallLog.wav"; // Path to your audio file
     this.callLog.load();
   }
   ngAfterViewInit(): void {
