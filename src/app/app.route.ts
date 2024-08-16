@@ -50,7 +50,7 @@ export const routes: Routes = [
       {
         path: "ask-eva-agent-playground",
         component: AskEVAPlaygroundComponent,
-        title: "Ask ATT Agent Playground",
+        title: "Ask EVA Agent Playground",
       },
 
       //apps
