@@ -92,6 +92,7 @@ import { VideomenuComponent } from "./eddie-detail/videomenu/videomenu.component
 import { VideoComponent } from "./eddie-detail/video/video.component";
 import { ServicePlaygroundComponent } from "./servicePlayground";
 import { AskEVAPlaygroundComponent } from "./askEVAPlayground";
+import { NDCPlaygroundComponent } from "./ndcPlayground";
 
 @NgModule({
   imports: [
@@ -156,6 +157,7 @@ import { AskEVAPlaygroundComponent } from "./askEVAPlayground";
     PlaygroundComponent,
     ServicePlaygroundComponent,
     AskEVAPlaygroundComponent,
+    NDCPlaygroundComponent,
   ],
 
   providers: [

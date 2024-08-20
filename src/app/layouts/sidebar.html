@@ -79,6 +79,15 @@
                     >{{ 'Ask EVA Agent Playground' | translate }}</a
                   >
                 </li>
+                <li>
+                  <a
+                    routerLink="/ask-ndc-playground"
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact: true}"
+                    (click)="toggleMobileMenu()"
+                    >{{ 'Ask NDC Playground' | translate }}</a
+                  >
+                </li>
 
                 <!-- <li>
                                     <a routerLink="/eddies-playback" routerLinkActive="active" (click)="toggleMobileMenu()">{{ 'Eddies Playback' | translate }}</a>
