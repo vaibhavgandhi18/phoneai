@@ -39,7 +39,7 @@ export class AskEVAPlaygroundComponent
   private intervalId: any;
   isLoading = true;
   callStatus = "";
-
+  summary = false;
   userPrompt = "";
   callLog: any;
   callerTune: any;
@@ -306,6 +306,7 @@ export class AskEVAPlaygroundComponent
     if (this.intervalId) {
       clearInterval(this.intervalId);
     }
+    setTimeout(() => (this.summary = true), 2000);
   }
 
   getFormattedTime(): string {

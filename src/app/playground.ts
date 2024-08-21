@@ -33,6 +33,7 @@ export class PlaygroundComponent implements OnInit, OnDestroy {
   private intervalId: any;
   userAgentInitiateCall = false;
   callStatus = "";
+  summary = false;
   tempSlider = 5;
   callLog: any;
   callerTune: any;
@@ -257,6 +258,7 @@ export class PlaygroundComponent implements OnInit, OnDestroy {
     if (this.intervalId) {
       clearInterval(this.intervalId);
     }
+    setTimeout(() => (this.summary = true), 2000);
   }
 
   getFormattedTime(): string {

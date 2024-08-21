@@ -43,6 +43,7 @@ export class ServicePlaygroundComponent
   userPrompt = "";
   callLog: any;
   callerTune: any;
+  summary = false;
   messages: Message[] = [
     {
       sender: "EVA",
@@ -252,6 +253,7 @@ export class ServicePlaygroundComponent
     if (this.intervalId) {
       clearInterval(this.intervalId);
     }
+    setTimeout(() => (this.summary = true), 2000);
   }
 
   getFormattedTime(): string {
