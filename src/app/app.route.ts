@@ -30,6 +30,8 @@ import { PlaygroundComponent } from "./playground";
 import { ServicePlaygroundComponent } from "./servicePlayground";
 import { AskEVAPlaygroundComponent } from "./askEVAPlayground";
 import { NDCPlaygroundComponent } from "./ndcPlayground";
+import { AskJamesPlaygroundComponent } from "./askJamesPlayground";
+import { AskJamesUserPlaygroundComponent } from "./askJamesUserPlayground";
 
 export const routes: Routes = [
   {
@@ -57,6 +59,16 @@ export const routes: Routes = [
         path: "ask-ndc-playground",
         component: NDCPlaygroundComponent,
         title: "Ask NDC Playground",
+      },
+      {
+        path: "ask-james-playground",
+        component: AskJamesPlaygroundComponent,
+        title: "Ask James Playground",
+      },
+      {
+        path: "ask-james-user-playground",
+        component: AskJamesUserPlaygroundComponent,
+        title: "Ask James User Playground",
       },
 
       //apps
