@@ -51,7 +51,7 @@ export class AskJamesPlaygroundComponent
       interval: 1000,
     },
     {
-      sender: "Customer",
+      sender: "Nick",
       message: "Hi Yes, Nick here.",
       interval: 500,
     },
@@ -62,7 +62,7 @@ export class AskJamesPlaygroundComponent
       interval: 800,
     },
     {
-      sender: "Customer",
+      sender: "Nick",
       message: "Yes. Go ahead.",
       interval: 500,
     },
@@ -73,7 +73,7 @@ export class AskJamesPlaygroundComponent
       interval: 500,
     },
     {
-      sender: "Customer",
+      sender: "Nick",
       message: "Ok thanks, can you share the location?",
       interval: 1000,
     },
@@ -83,7 +83,7 @@ export class AskJamesPlaygroundComponent
       interval: 1000,
     },
     {
-      sender: "Customer",
+      sender: "Nick",
       message: "Thanks.",
       interval: 500,
     },
@@ -94,7 +94,7 @@ export class AskJamesPlaygroundComponent
       interval: 1000,
     },
     {
-      sender: "Customer",
+      sender: "Nick",
       message: "No I'm ok. Thanks",
       interval: 1000,
     },
