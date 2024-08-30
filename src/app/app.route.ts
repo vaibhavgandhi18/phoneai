@@ -32,6 +32,7 @@ import { AskEVAPlaygroundComponent } from "./askEVAPlayground";
 import { NDCPlaygroundComponent } from "./ndcPlayground";
 import { AskJamesPlaygroundComponent } from "./askJamesPlayground";
 import { AskJamesUserPlaygroundComponent } from "./askJamesUserPlayground";
+import { FirstNetPlaygroundComponent } from "./firstNetPlayground";
 
 export const routes: Routes = [
   {
@@ -69,6 +70,11 @@ export const routes: Routes = [
         path: "ask-james-user-playground",
         component: AskJamesUserPlaygroundComponent,
         title: "Ask James User Playground",
+      },
+      {
+        path: "first-net-playground",
+        component: FirstNetPlaygroundComponent,
+        title: "FirstNet Playground",
       },
 
       //apps

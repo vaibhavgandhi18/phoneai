@@ -106,6 +106,15 @@
                     >{{ 'Ask James User Playground' | translate }}</a
                   >
                 </li>
+                <li>
+                  <a
+                    routerLink="/first-net-playground"
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact: true}"
+                    (click)="toggleMobileMenu()"
+                    >{{ 'FirstNet Playground' | translate }}</a
+                  >
+                </li>
 
                 <!-- <li>
                                     <a routerLink="/eddies-playback" routerLinkActive="active" (click)="toggleMobileMenu()">{{ 'Eddies Playback' | translate }}</a>

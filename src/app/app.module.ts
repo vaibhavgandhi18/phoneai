@@ -95,6 +95,7 @@ import { AskEVAPlaygroundComponent } from "./askEVAPlayground";
 import { NDCPlaygroundComponent } from "./ndcPlayground";
 import { AskJamesPlaygroundComponent } from "./askJamesPlayground";
 import { AskJamesUserPlaygroundComponent } from "./askJamesUserPlayground";
+import { FirstNetPlaygroundComponent } from "./firstNetPlayground";
 
 @NgModule({
   imports: [
@@ -162,6 +163,7 @@ import { AskJamesUserPlaygroundComponent } from "./askJamesUserPlayground";
     NDCPlaygroundComponent,
     AskJamesPlaygroundComponent,
     AskJamesUserPlaygroundComponent,
+    FirstNetPlaygroundComponent,
   ],
 
   providers: [
