@@ -115,6 +115,15 @@
                     >{{ 'FirstNet Playground' | translate }}</a
                   >
                 </li>
+                <li>
+                  <a
+                    routerLink="/bill-sync"
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact: true}"
+                    (click)="toggleMobileMenu()"
+                    >{{ 'AT&T Bill Sync Playground' | translate }}</a
+                  >
+                </li>
 
                 <!-- <li>
                                     <a routerLink="/eddies-playback" routerLinkActive="active" (click)="toggleMobileMenu()">{{ 'Eddies Playback' | translate }}</a>

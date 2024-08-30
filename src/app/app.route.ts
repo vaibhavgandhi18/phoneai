@@ -33,6 +33,7 @@ import { NDCPlaygroundComponent } from "./ndcPlayground";
 import { AskJamesPlaygroundComponent } from "./askJamesPlayground";
 import { AskJamesUserPlaygroundComponent } from "./askJamesUserPlayground";
 import { FirstNetPlaygroundComponent } from "./firstNetPlayground";
+import { BillSyncComponent } from "./billSync";
 
 export const routes: Routes = [
   {
@@ -75,6 +76,11 @@ export const routes: Routes = [
         path: "first-net-playground",
         component: FirstNetPlaygroundComponent,
         title: "FirstNet Playground",
+      },
+      {
+        path: "bill-sync",
+        component: BillSyncComponent,
+        title: "AT&T Bill Sync Playground",
       },
 
       //apps

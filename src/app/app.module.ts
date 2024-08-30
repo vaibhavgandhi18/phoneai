@@ -96,6 +96,7 @@ import { NDCPlaygroundComponent } from "./ndcPlayground";
 import { AskJamesPlaygroundComponent } from "./askJamesPlayground";
 import { AskJamesUserPlaygroundComponent } from "./askJamesUserPlayground";
 import { FirstNetPlaygroundComponent } from "./firstNetPlayground";
+import { BillSyncComponent } from "./billSync";
 
 @NgModule({
   imports: [
@@ -164,6 +165,7 @@ import { FirstNetPlaygroundComponent } from "./firstNetPlayground";
     AskJamesPlaygroundComponent,
     AskJamesUserPlaygroundComponent,
     FirstNetPlaygroundComponent,
+    BillSyncComponent,
   ],
 
   providers: [

@@ -16,8 +16,8 @@ interface Message {
 }
 @Component({
   moduleId: module.id,
-  templateUrl: "./firstNetPlayground.html",
-  styleUrls: ["./firstNetPlayground.scss"],
+  templateUrl: "./billSync.html",
+  styleUrls: ["./billSync.scss"],
   animations: [
     trigger("toggleAnimation", [
       transition(":enter", [
@@ -30,9 +30,7 @@ interface Message {
     ]),
   ],
 })
-export class FirstNetPlaygroundComponent
-  implements OnInit, OnDestroy, AfterViewInit
-{
+export class BillSyncComponent implements OnInit, OnDestroy, AfterViewInit {
   store: any;
   minutes: number = 0;
   seconds: number = 0;
@@ -45,100 +43,47 @@ export class FirstNetPlaygroundComponent
   callerTune: any;
   messages: Message[] = [
     {
-      sender: "FirstNet Support",
-      message: "Hi, this is AT&T FirstNet Support. How can I assist you today?",
+      sender: "Inspector Drain INC",
+      message: "Hello",
       interval: 1000,
     },
     {
-      sender: "James",
-      message: "I'm calling AT&T to report an issue with my device network.",
-      interval: 1000,
-    },
-    {
-      sender: "FirstNet Support",
+      sender: "Bill Sync Agent",
       message:
-        "I'm sorry to hear you're having an issue with your device network. Could you please provide me with a few more details so I can assist you? What is your name and the phone number you're calling from?",
-      interval: 300,
-    },
-    {
-      sender: "James",
-      message:
-        "My name is James Weber. And the phone number I'm calling from is 4252365436",
-      interval: 1000,
-    },
-    {
-      sender: "FirstNet Support",
-      message:
-        "Okay, got it. The phone number you're calling from is 425-236-5436. Can you confirm that for me?",
-      interval: 1000,
-    },
-    {
-      sender: "James",
-      message: "Yes",
-      interval: 1000,
-    },
-    {
-      sender: "FirstNet Support",
-      message:
-        "Okay, James, thanks for confirming the phone number. Based on the information you've provided, it looks like this device is registered under Foundation Account number 57689481. Is that correct?",
+        "Hello, this is Emily from AT&T services. I'm calling about the account for Inspector Drain INC. Their company account has a past due balance of eighteen thousand, four hundred and forty five dollars as of July twentieth. I understand this can be frustrating, but I wanted to reach out and see if we can work together to get this resolved. Is there a good time we could discuss the account and explore payment options that would work for your business? I'm happy to answer any questions you may have.",
       interval: 100,
     },
     {
-      sender: "James",
-      message: "Yes",
+      sender: "Inspector Drain INC",
+      message:
+        "I did not know I had a past due. Is there any way that I can pay it in 3 to 5 days?",
       interval: 100,
     },
     {
-      sender: "FirstNet Support",
+      sender: "Bill Sync Agent",
       message:
-        "Okay, great. Now, can you please tell me what issue you're experiencing with your network?",
+        "I understand, and I'm happy to work with you on that. If you're able to pay the full past due amount of eighteen thousand, four hundred and forty five dollars within the next three to five days, that would be very helpful. I can go ahead and note that on your account, and we'll hold off on any further collection activity during that time. Would you like me to send you a reminder email with the total due and instructions for making the payment? I'm here to help get this resolved as smoothly as possible.",
       interval: 100,
     },
     {
-      sender: "James",
-      message:
-        "Since morning, I couldn't send any text messages. Looks like the text message is broken in the area I am now.",
-      interval: 200,
-    },
-    {
-      sender: "FirstNet Support",
-      message:
-        "Okay, James, can you please confirm the location where you're experiencing this issue with text messaging?",
-      interval: 200,
-    },
-    {
-      sender: "James",
-      message: "20205. North Creek Parkway, Bothell, Washington.",
-      interval: 200,
-    },
-    {
-      sender: "FirstNet Support",
-      message:
-        "Okay, thanks for providing that location information, James. It looks like you're at 20205 North Creek Parkway in Bothell, Washington. Can you confirm if your phone and data services are currently working in that area, or is it just the text messaging that's impacted?",
+      sender: "Inspector Drain INC",
+      message: "Yes. That would be great.",
       interval: 100,
     },
     {
-      sender: "James",
+      sender: "Bill Sync Agent",
       message:
-        "That's correct. The phone and data seems to be okay. Only text is not going.",
+        "Okay, great. I'll go ahead and send you an email with the total past due amount of eighteen thousand, four hundred and forty five dollars, and instructions for making the payment within the next three to five days. Please let me know if you have any other questions or concerns. I'm here to work with you to get this resolved.",
       interval: 100,
     },
-
     {
-      sender: "FirstNet Support",
-      message:
-        "Okay, James, thank you for that information. It sounds like the issue is isolated to just text messaging, and your phone and data services are still working properly in that area. I'll go ahead and create a ticket to get this investigated and resolved as soon as possible. Is there anything else you'd like to add before I do that?",
-      interval: 0,
+      sender: "Inspector Drain INC",
+      message: "Nope. I'm good. Thank you.",
+      interval: 100,
     },
     {
-      sender: "James",
-      message: "No",
-      interval: 0,
-    },
-    {
-      sender: "FirstNet Support",
-      message:
-        "Thank you for reporting this issue, James. We will create a ticket and get this resolved as soon as possible. Have a great rest of your day.",
+      sender: "Bill Sync Agent",
+      message: "Thank you for your time. Have a great rest of your day.",
       interval: 0,
     },
   ];
@@ -157,7 +102,7 @@ export class FirstNetPlaygroundComponent
     // this.callerTune.load();
     // this.callerTune.play();
     this.callLog = new Audio();
-    this.callLog.src = "../assets/firstNet.wav"; // Path to your audio file
+    this.callLog.src = "../assets/billSync.wav"; // Path to your audio file
     this.callLog.load();
   }
   ngAfterViewInit(): void {
@@ -210,7 +155,7 @@ export class FirstNetPlaygroundComponent
   typeMessage(message: Message): void {
     let currentIndex = 0;
     let displayedText = "";
-    const typingSpeed = 75; // Adjust typing speed as needed
+    const typingSpeed = 65; // Adjust typing speed as needed
 
     const typeInterval = setInterval(() => {
       displayedText += message.message.charAt(currentIndex);
@@ -260,9 +205,6 @@ export class FirstNetPlaygroundComponent
       clearInterval(this.intervalId);
     }
     setTimeout(() => (this.summary = true), 2000);
-    setTimeout(() => {
-      window.open("http://localhost:4202", "_blank");
-    }, 5000);
   }
 
   getFormattedTime(): string {
